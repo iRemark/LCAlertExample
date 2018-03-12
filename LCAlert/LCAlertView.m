@@ -66,7 +66,7 @@ NSTimer *durationTimer;
     if (self)
     {
         // Default values
-        kDefaultShadowOpacity = 0.7f;
+        kDefaultShadowOpacity = 0.6f;
         kCircleHeight = 56.0f;
         kCircleTopPosition = -12.0f;
         kCircleBackgroundTopPosition = -15.0f;
@@ -328,7 +328,10 @@ NSTimer *durationTimer;
     // Add subviews
     [self.rootViewController addChildViewController:self];
     self.shadowView.frame = vc.view.bounds;
+    
+    self.shadowView.alpha = 0;
     [self.rootViewController.view addSubview:self.shadowView];
+    
     [self.rootViewController.view addSubview:self.view];
 
     // Alert colour/icon
@@ -452,11 +455,13 @@ NSTimer *durationTimer;
                                                         userInfo:nil
                                                          repeats:NO];
     }
+    
 
+    
     // Animate in the alert view
-    [UIView animateWithDuration:0.25f
+    [UIView animateWithDuration:0.3f
                           delay:0
-         usingSpringWithDamping:0.7
+         usingSpringWithDamping:0.6
           initialSpringVelocity:0.2
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -470,9 +475,9 @@ NSTimer *durationTimer;
         self.view.alpha = 1.0f;
                          
     } completion:^(BOOL completed) {
-        [UIView animateWithDuration:0.2f animations:^{
-            self.view.center = self.rootViewController.view.center;
-        }];
+//        [UIView animateWithDuration:0.2f animations:^{
+//            self.view.center = self.rootViewController.view.center;
+//        }];
     }];
  
 
