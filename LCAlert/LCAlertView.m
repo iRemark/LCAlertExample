@@ -53,12 +53,12 @@ NSTimer *durationTimer;
 
 #pragma mark - Initialization
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:@"NSCoding not supported"
-                                 userInfo:nil];
-}
+//- (id)initWithCoder:(NSCoder *)aDecoder
+//{
+//    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+//                                   reason:@"NSCoding not supported"
+//                                 userInfo:nil];
+//}
 
 - (id)init
 {
